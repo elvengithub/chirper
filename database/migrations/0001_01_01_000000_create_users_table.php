@@ -20,7 +20,15 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-
+        //after nimo buhat sa migration mao ni imo i butang sa terminal for entering sa database 'chirp'
+    /*
+    \DB::table('chirps')->insert([
+        'user_id' => null,  // Because we don't have a user, we can just leave it off
+     'message' => 'My first chirp in the database!',
+     'created_at' => now(),  // Laravel doesn't give these by default when using DB
+     'updated_at' => now()
+    ]);        
+    */
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
